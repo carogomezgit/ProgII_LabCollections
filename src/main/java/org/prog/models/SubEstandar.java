@@ -12,4 +12,10 @@ public class SubEstandar extends Suscripcion {
   public TipoSuscripcion getTipoSuscripcion() {
     return TipoSuscripcion.ESTANDAR;
   }
+
+  @Override
+  public String toString() {
+    return super.toString() +
+        "Tipo de suscripción: Estándar";
+  }
 }

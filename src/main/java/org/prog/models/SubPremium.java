@@ -11,4 +11,10 @@ public class SubPremium extends Suscripcion {
   public TipoSuscripcion getTipoSuscripcion() {
     return TipoSuscripcion.PREMIUM;
   }
+
+  @Override
+  public String toString() {
+    return super.toString() +
+        "Tipo de suscripción: Premium";
+  }
 }

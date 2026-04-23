@@ -50,10 +50,10 @@ public abstract class Suscripcion {
 
   @Override
   public String toString() {
-    return "Suscripcion{" +
-        "idUsuario=" + idUsuario +
-        ", diasVigencia=" + diasVigencia +
-        ", tipo=" + tipo +
+    return "Suscripcion: {" +
+        "Código de suscripción: " + codigoSub +
+        ", ID usuario: " + idUsuario +
+        ", Días de vigencia: " + diasVigencia +
         '}';
   }
 }

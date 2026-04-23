@@ -20,4 +20,11 @@ public class SubFamiliar extends Suscripcion{
   public TipoSuscripcion getTipoSuscripcion() {
     return TipoSuscripcion.FAMILIAR;
   }
+
+  @Override
+  public String toString() {
+    return super.toString() +
+        "Tipo de suscripción: Familiar";
+  }
+
 }
