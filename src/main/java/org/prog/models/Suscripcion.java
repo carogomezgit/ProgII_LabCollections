@@ -11,11 +11,10 @@ public abstract class Suscripcion {
   // contador
   private int contador = 0;
 
-  public Suscripcion(int idUsuario, int diasVigencia, TipoSuscripcion tipo) {
+  public Suscripcion(int idUsuario, int diasVigencia) {
     this.codigoSub = contador++;
     this.idUsuario = idUsuario;
     this.diasVigencia = diasVigencia;
-    this.tipo = tipo;
   }
 
   public int getCodigoSub() {
@@ -45,6 +44,9 @@ public abstract class Suscripcion {
   public void setIdUsuario(int idUsuario) {
     this.idUsuario = idUsuario;
   }
+
+  // metodo abstracto
+  public abstract TipoSuscripcion getTipoSuscripcion();
 
   @Override
   public String toString() {

@@ -8,11 +8,16 @@ public class SubFamiliar extends Suscripcion{
   private String pinAccesoParental;
 
   public SubFamiliar(int idUsuario, int diasVigencia, String pinAccesoParental) throws PinInvalidoException {
-    super(idUsuario, diasVigencia, TipoSuscripcion.FAMILIAR);
+    super(idUsuario, diasVigencia);
 
     if (pinAccesoParental == null || pinAccesoParental.length() != 4 || !pinAccesoParental.matches("[0-9]+")) {
       throw new PinInvalidoException("El pin de acceso parental debe ser de 4 dígitos");
     }
     this.pinAccesoParental = pinAccesoParental;
+  }
+
+  @Override
+  public TipoSuscripcion getTipoSuscripcion() {
+    return TipoSuscripcion.FAMILIAR;
   }
 }
