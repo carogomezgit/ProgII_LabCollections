@@ -9,7 +9,7 @@ public abstract class Suscripcion {
   private TipoSuscripcion tipo;
 
   // contador
-  private int contador = 0;
+  private static int contador = 0;
 
   public Suscripcion(int idUsuario, int diasVigencia) {
     this.codigoSub = contador++;
@@ -50,10 +50,9 @@ public abstract class Suscripcion {
 
   @Override
   public String toString() {
-    return "Suscripcion: {" +
+    return "Suscripcion: " +
         "Código de suscripción: " + codigoSub +
         ", ID usuario: " + idUsuario +
-        ", Días de vigencia: " + diasVigencia +
-        '}';
+        ", Días de vigencia: " + diasVigencia;
   }
 }

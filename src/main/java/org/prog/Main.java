@@ -1,17 +1,36 @@
 package org.prog;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import org.prog.models.SubEstandar;
+import org.prog.models.SubFamiliar;
+import org.prog.models.SubPremium;
+import org.prog.models.Suscripcion;
+
 public class Main {
   public static void main(String[] args) {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    System.out.printf("Hello and welcome!");
+    AppGestor gestor = new AppGestor();
 
-    for (int i = 1; i <= 5; i++) {
-      //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-      // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-      System.out.println("i = " + i);
-    }
+    // crear suscripciones
+    Suscripcion sub1 = new SubEstandar(384, 30);
+    Suscripcion sub2 = new SubEstandar(298, 60);
+    Suscripcion sub3 = new SubPremium(119, 30);
+    Suscripcion sub4 = new SubPremium(372, 60);
+    Suscripcion sub5 = new SubFamiliar(1044, 30, "1234");
+    Suscripcion sub6 = new SubFamiliar(483, 60, "9452");
+
+    // registrar suscripciones
+    gestor.registrarSuscripcion(sub1);
+    gestor.registrarSuscripcion(sub2);
+    gestor.registrarSuscripcion(sub3);
+    gestor.registrarSuscripcion(sub4);
+    gestor.registrarSuscripcion(sub5);
+    gestor.registrarSuscripcion(sub6);
+
+    // visualizar suscripciones
+    gestor.visualizarSuscripciones();
+
+    // organizar suscripciones existentes por tipo de plan
+
+
+
   }
 }
