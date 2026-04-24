@@ -1,5 +1,6 @@
 package org.prog;
 
+import org.prog.exception.PinInvalidoException;
 import org.prog.models.SubEstandar;
 import org.prog.models.SubFamiliar;
 import org.prog.models.SubPremium;
@@ -15,7 +16,13 @@ public class Main {
     Suscripcion sub3 = new SubPremium(119, 30);
     Suscripcion sub4 = new SubPremium(372, 60);
     Suscripcion sub5 = new SubFamiliar(1044, 30, "1234");
-    Suscripcion sub6 = new SubFamiliar(483, 60, "9452");
+
+    // sub con pin inválido
+    try {
+      Suscripcion sub6 = new SubFamiliar(483, 60, "123");
+    } catch (PinInvalidoException e) {
+      System.out.println(e);
+    }
 
     // registrar suscripciones
     gestor.registrarSuscripcion(sub1);
@@ -23,10 +30,19 @@ public class Main {
     gestor.registrarSuscripcion(sub3);
     gestor.registrarSuscripcion(sub4);
     gestor.registrarSuscripcion(sub5);
-    gestor.registrarSuscripcion(sub6);
+    // gestor.registrarSuscripcion(sub6); <- tiene pin invalido
 
     // visualizar suscripciones
     gestor.visualizarSuscripciones();
+
+    // buscar sub por codigo
+      Suscripcion subEncontrada = gestor.buscarPorCodigo(4);
+      if (subEncontrada != null) {
+        System.out.println("Suscripción encontrada: " + subEncontrada);
+      } else {
+        System.out.println("No se encontró una suscripción con este código");
+      }
+
 
     // organizar suscripciones existentes por tipo de plan
 

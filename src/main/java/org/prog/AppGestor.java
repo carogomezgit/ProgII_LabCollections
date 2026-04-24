@@ -29,7 +29,14 @@ public class AppGestor {
   }
 
   // busqueda por codigo de suscripcion
-
+  public Suscripcion buscarPorCodigo(int codigoSub) {
+    for (Suscripcion sub : listaSuscripciones) {
+      if (sub.getCodigoSub() == codigoSub) {
+        return sub;
+      }
+    }
+    return null;
+  }
 
   // organizar suscripciones por tipo de plan
   public Map<TipoSuscripcion, List<Suscripcion>> organizarPorTipo() {

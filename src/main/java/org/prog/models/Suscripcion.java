@@ -53,6 +53,7 @@ public abstract class Suscripcion {
     return "Suscripcion: " +
         "Código de suscripción: " + codigoSub +
         ", ID usuario: " + idUsuario +
-        ", Días de vigencia: " + diasVigencia;
+        ", Días de vigencia: " + diasVigencia +
+        ", ";
   }
 }
